@@ -14,9 +14,7 @@
 ### FUNCTIONS
 ## handle errors
 function HandleError {
-    local ExitCode=$?
-    local ErrorMessage="$BASH_COMMAND exited with status $ExitCode"
-    echo "ERROR - $ErrorMessage"
+    echo "ERROR wp_recovery line: \"$BASH_COMMAND\" exited with status $?\n"
 }
 trap 'HandleError' ERR
 
@@ -106,6 +104,27 @@ function user_input {
     done
 }
 
+## REMOVE FROM LIST
+function alter_list {
+
+    # get list name
+    local list_name="$1"
+
+    # get list contents
+    local -n f_lst=$list_name
+
+    while [ "$file_index" != "!" ]
+    do
+        $echo -e "\nFiles to be removed:\n$(for file in ${f_lst[@]}; do $echo " - $file"; done)\n"
+        $read -p "What file would you like to remove from the list? [! to exit] : " file_index
+
+        # REMOVE FROM LIST
+        if [ "$file_index" != "!" ]; then
+            f_lst=("${f_lst[@]/$file_index}")
+        fi
+    done
+}
+
 ### MAIN
 #### get binary ####
 get_binary
@@ -148,6 +167,13 @@ else
     fi
 fi
 
+# alter file list if needed
+$echo -e "\nDo you wish to remove items from the list of files?\nWordPress files cannot be removed.\n"
+user_input
+if [ "$user_answer" == "yes" ]; then
+    alter_list "bad_files"
+fi
+
 $echo -e "\nWould you like to continue removing files?"
 
 user_input
@@ -162,11 +188,20 @@ if [ "$user_answer" == "yes" ]; then
 
     # download core again
     $echo -e "\nIntalling core of wordpres version $wp_version"
-    $wp core download --version=$wp_version --allow-root &> /dev/null
+    $wp core download --version=$wp_version --allow-root > /dev/null
+
+    # if download failed try forced version
+    if [ "$?" -ne "0" ]; then
+        $echo -e "\nWordPress core installation faild, would you like to try forced version? (files related to wordpress will be removed.)"
+        user_input
+        if [ "$user_answer" == "yes" ]; then
+            $wp core download --version=$wp_version --allow-root --force > /dev/null
+        fi
+    fi
 
     # fix owner
     $chown -R $wp_owner:$wp_owner * .htaccess &> /dev/null
-    $echo -e " - Done.\n"
+    $echo -e "\n - Done.\n"
 else
     $echo -e "\nok, bye :)\n"
 
