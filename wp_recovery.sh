@@ -86,10 +86,12 @@ function user_input {
     # fix issue with calling read from binary if it exists
     $read -p "test" r_test <<< "test"
     if [ -z "$r_test" ] && $command -v read > /dev/null; then
-	read="read"
+	    read="read"
     else
-	$echo "ERROR - error with binary \"read\""
-	exit 1
+	    $echo "ERROR - error with binary \"read\""
+	    
+        # EXIT
+        exit 1
     fi
     
     # get user input
