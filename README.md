@@ -10,7 +10,7 @@ Use moltiple methods to recover from an infected wordpress website
 ### Direct
 ```sh
 # Install zipped project
-wget -O wp_recovery.zip https://codeload.github.com/Noam-Alum/make_backup/zip/refs/heads/main
+wget -O wp_recovery.zip https://codeload.github.com/Noam-Alum/wp_recovery/zip/refs/heads/main
 ```
 
 ### GitClone
