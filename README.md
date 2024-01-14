@@ -198,8 +198,11 @@ Continue? [yes/no] : yes
 ```
 
 <br>
+<hr>
 
 > **After running the script in a case where the _wp_config.php_, _.htaccess_ file and the _wp_content_ directory is not infected you should have a healty and functioning WordPress installation.**
+
+<hr>
 
 ## Contact
 
