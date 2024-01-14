@@ -150,7 +150,6 @@ fi
 
 $echo -e "\nWould you like to continue removing files?"
 
-### --- ERROR WITH BINRAY AT read WHILE USING which USING command -v WORKS. --- ####
 user_input
 
 if [ "$user_answer" == "yes" ]; then
