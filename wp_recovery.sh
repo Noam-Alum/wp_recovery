@@ -5,7 +5,7 @@
 # powered by bash
 # Written by Noam Alum
 #
-# Documentation at https://ncode.codes/assets/single_snippet/Single_codes.php?code=#
+# Documentation at https://ncode.codes/assets/single_snippet/Single_codes.php?code=wp_recovery
 # GitHub page at https://github.com/Noam-Alum/wp_recovery/
 #
 # © Ncode. All rights reserved
