@@ -84,14 +84,14 @@ function user_input {
     get_binary
 
     # Use full path for read command
-    read -p "Continue? [yes/no] : " user_answer < /dev/tty
+    $read -p "Continue? [yes/no] : " user_answer < /dev/tty
 
     while [ -z "$user_answer" ]; do
-        read -p "Continue? [yes/no] : " user_answer < /dev/tty
+        $read -p "Continue? [yes/no] : " user_answer < /dev/tty
     done
 
     while [ "$user_answer" != "yes" ] && [ "$user_answer" != "no" ]; do
-        read -p "Continue? [yes/no] : " user_answer < /dev/tty
+        $read -p "Continue? [yes/no] : " user_answer < /dev/tty
     done
 }
 
