@@ -83,15 +83,24 @@ function check_environment {
 function user_input {
     get_binary
 
+    # testing for issue with calling read from binary
+    $read -p "test" r_test <<< "test"
+    if [ -z "$r_test" ] && command -v read > /dev/null; then
+	read="read"
+    else
+	echo "ERROR - error with binary \"read\""
+	exit 1
+    fi
+
     # Use full path for read command
-    $read -p "Continue? [yes/no] : " user_answer < /dev/tty
+    $read -p "Continue? [yes/no] : " user_answer < /dev/stdin
 
     while [ -z "$user_answer" ]; do
-        $read -p "Continue? [yes/no] : " user_answer < /dev/tty
+        $read -p "Continue? [yes/no] : " user_answer < /dev/stdin
     done
 
     while [ "$user_answer" != "yes" ] && [ "$user_answer" != "no" ]; do
-        $read -p "Continue? [yes/no] : " user_answer < /dev/tty
+        $read -p "Continue? [yes/no] : " user_answer < /dev/stdin
     done
 }
 
