@@ -23,6 +23,8 @@ git clone https://github.com/Noam-Alum/wp_recovery.git
 <br>
 
 # Usage example && Development setup
+
+## For example:
 I have here a WordPress installation with infected files:
 ```
 -rw-r--r--  1 testercom testercom     0 Jan 14 02:25 bad_file_3.php
@@ -107,6 +109,11 @@ Files to be removed:
  - wp-trackback.php
  - xmlrpc.php
 
+Do you wish to remove items from the list of files?
+WordPress files cannot be removed.
+
+Continue? [yes/no] : no
+
 Would you like to continue removing files?
 Continue? [yes/no] : yes
  - Finished removing files.
@@ -116,7 +123,9 @@ Intalling core of wordpres version 6.2.2
 
 [root@server public_html]#
 ```
-In a case where there are more than 40 files/directories the script would ask you if you wish the view the full list of files to be removed.
+## Features
+
+* In a case where there are more than 40 files/directories the script would ask you if you wish the view the full list of files to be removed.
 ```
  - bad_file_37.php
  - bad_file_38.php
@@ -131,7 +140,62 @@ Full list of files to be removed:
  - bad_file_11.php
  - bad_file_12.php
 ```
-After running the script in a case where the _wp_config.php_, _.htaccess_ file and the _wp_content_ directory is not infected you should have a healty and functioning WordPress installation.
+
+* In a case when you would like to remove item from the list of files:
+```
+Do you wish to remove items from the list of files?
+WordPress files cannot be removed.
+
+Continue? [yes/no] : yes
+```
+You just need to specify which item you wish to remove from the list like so:
+```
+Files to be removed:
+ - index.php
+ - license.txt
+ - readme.html
+ - wp-activate.php
+ - wp-admin
+ - wp-blog-header.php
+ - wp-comments-post.php
+ - wp-config-sample.php
+ - wp-includes
+ - wp-links-opml.php
+ - wp-load.php
+ - wp-login.php
+ - wp-mail.php
+ - wp-settings.php
+ - wp-signup.php
+ - wp-trackback.php
+ - xmlrpc.php
+
+What file would you like to remove from the list? [! to exit] : index.php
+
+Files to be removed:
+ - license.txt
+ - readme.html
+ - wp-activate.php
+ - wp-admin
+ - wp-blog-header.php
+ - wp-comments-post.php
+ - wp-config-sample.php
+ - wp-includes
+ - wp-links-opml.php
+ - wp-load.php
+ - wp-login.php
+ - wp-mail.php
+ - wp-settings.php
+ - wp-signup.php
+ - wp-trackback.php
+ - xmlrpc.php
+
+What file would you like to remove from the list? [! to exit] : !
+
+Would you like to continue removing files?
+Continue? [yes/no] : yes
+```
+
+> **After running the script in a case where the _wp_config.php_, _.htaccess_ file and the _wp_content_ directory is not infected you should have a healty and functioning WordPress installation.**
 
 ## Contact
 
