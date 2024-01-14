@@ -88,7 +88,7 @@ function user_input {
     if [ -z "$r_test" ] && $command -v read > /dev/null; then
 	read="read"
     else
-	echo "ERROR - error with binary \"read\""
+	$echo "ERROR - error with binary \"read\""
 	exit 1
     fi
     
