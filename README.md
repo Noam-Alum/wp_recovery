@@ -125,7 +125,7 @@ Intalling core of wordpres version 6.2.2
 ```
 ## Features
 
-* In a case where there are more than 40 files/directories the script would ask you if you wish the view the full list of files to be removed.
+#### In a case where there are more than 40 files/directories the script would ask you if you wish the view the full list of files to be removed.
 ```
  - bad_file_37.php
  - bad_file_38.php
@@ -141,7 +141,9 @@ Full list of files to be removed:
  - bad_file_12.php
 ```
 
-* In a case when you would like to remove item from the list of files:
+<br>
+
+#### In a case when you would like to remove item from the list of files:
 ```
 Do you wish to remove items from the list of files?
 WordPress files cannot be removed.
@@ -194,6 +196,8 @@ What file would you like to remove from the list? [! to exit] : !
 Would you like to continue removing files?
 Continue? [yes/no] : yes
 ```
+
+<br>
 
 > **After running the script in a case where the _wp_config.php_, _.htaccess_ file and the _wp_content_ directory is not infected you should have a healty and functioning WordPress installation.**
 
