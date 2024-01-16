@@ -168,7 +168,7 @@ else
 fi
 
 # alter file list if needed
-$echo -e "\nDo you wish to remove items from the list of files?\nWordPress files cannot be removed.\n"
+$echo -e "\nDo you wish to remove items from the list of files?\nWordPress files should not be removed from list.\n"
 user_input
 if [ "$user_answer" == "yes" ]; then
     alter_list "bad_files"
