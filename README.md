@@ -1,6 +1,6 @@
 # WordPress recovery script
 
-Use moltiple methods to recover from an infected wordpress website
+Use multiple methods to recover from an infected wordpress website
 ![](header.png)
 
 # Installation
