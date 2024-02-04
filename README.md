@@ -1,7 +1,25 @@
 # WordPress recovery script
 
-Use multiple methods to recover from an infected wordpress website
-![](header.png)
+###  Use multiple methods to recover from an infected wordpress website.
+<p align="center">
+  <img src="https://miraclesofasecondchance.org/wp-content/uploads/2023/02/Miracle-2.jpg" alt="Centered Image">
+</p>
+
+### Background:
+While trying to fix a clients infected WordPress website I noticed that the same steps are involved in the process:
+1. Scanning website for infected files.
+
+2. If there are few infected files review them and remove manually, otherwise send the client a list of files to be removed (As a web-hosting company we are not responsible to fix code related
+   issues).
+
+3. Check if site is working properly (after removing infected files), if not try removing all files and directories except wp-config.php, .htaccess and wp-content and install WordPress core
+   with the same version to minimise the chance of a corrupted file existing in the site files.
+
+4. If all three steps did not fix the infected site restore website from a backup if it exists.
+
+For that sake I came up with a minimal script to make step 3 a bit easier and more straight forward as it does not involve too much human judgement and I look forward to expanding it with more complex ways to recover infected websites in the future 😊.
+
+<hr>
 
 # Installation
 
@@ -18,9 +36,13 @@ wget -O wp_recovery.zip https://codeload.github.com/Noam-Alum/wp_recovery/zip/re
 # Clone
 git clone https://github.com/Noam-Alum/wp_recovery.git
 ```
-<br>
 <hr>
-<br>
+
+<p align="center">
+  <img src="https://baniwalinfotech.com/images/How-to-Fix-Slow-WordPress-Website-Admin-Dashboard.png">
+</p>
+
+<hr>
 
 # Usage example && Development setup
 
