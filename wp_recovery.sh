@@ -5,11 +5,11 @@
 # powered by bash
 # Written by Noam Alum
 #
-# Documentation at https://ncode.codes/assets/single_snippet/Single_codes.php?code=wp_recovery
+# Documentation at https://alum.sh/assets/Documents/wp_recovery.html
 # GitHub page at https://github.com/Noam-Alum/wp_recovery/
 #
-# © Ncode. All rights reserved
-# Visit ncode.codes for more scripts like this :)
+# © Noam Alum. All rights reserved
+# Visit alum.sh for more scripts like this :)
 
 ### FUNCTIONS
 ## handle errors
