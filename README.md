@@ -21,6 +21,12 @@ For that sake I came up with a minimal script to make step 3 a bit easier and mo
 
 <hr>
 
+# 
+
+# Documentation
+
+Click [here](https://docs.alum.sh/wp_recovery/introduction-and-usage.html) to view the make-backup documentation.
+
 # Installation
 
 ## OS X & Linux:
